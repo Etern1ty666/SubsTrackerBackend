@@ -50,6 +50,19 @@ REST_FRAMEWORK = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "*",
+]
+
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'tg-user-info',
+    'tg-user-data',
+    'Tg-Init-Data',
+    'Tg-User-Info'
+    'Content-Type',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
