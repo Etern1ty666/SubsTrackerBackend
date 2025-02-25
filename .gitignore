@@ -1,0 +1,51 @@
+# Среда разработки (Venv, Virtualenv)
+venv/
+env/
+.venv/
+ENV/
+
+# Файлы кеша и временные файлы
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Логи и отладочная информация
+*.log
+logs/
+debug.log
+
+# Файлы окружения (секретные ключи, пароли и т. д.)
+.env
+*.env
+
+# База данных (если SQLite)
+db.sqlite3
+*.sqlite3
+
+# Файлы миграций (необязательно, если хочешь хранить только код)
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.py, !*/migrations/__init__.py
+
+# Фронтенд-зависимости (если используешь React/Vue)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Docker
+docker-compose.override.yml
+
+# Static & Media (если генерируются локально)
+staticfiles/
+media/
+
+# Coverage (если используешь pytest или coverage.py)
+.coverage
+htmlcov/
