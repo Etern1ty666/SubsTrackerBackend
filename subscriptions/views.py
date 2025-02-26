@@ -56,15 +56,20 @@ def update_last_activity(user_id):
 class CheckTelegramData(APIView):
     def get(self, request):
         if check_webapp_signature(token=bot_token, init_data=request.query_params['init_data']):
+            user_data = {
+                'user_id': request.query_params.get('user_info[id]'),
+                'language_code': request.query_params.get('user_info[language_code]', ''),
+                'first_name': request.query_params.get('user_info[first_name]', ''),
+                'last_name': request.query_params.get('user_info[last_name]', ''),
+                'username': request.query_params.get('user_info[username]', ''),
+                'notifications': True
+            }
+
+            if not user_data['user_id']:
+                return Response({'error': 'Тelegram user ID is required'}, status=400)
+
             if user_not_exists(request.query_params['user_info[id]']):
-                User.objects.create(
-                                    user_id=request.query_params['user_info[id]'],
-                                    language_code=request.query_params['user_info[language_code]'],
-                                    first_name=request.query_params['user_info[first_name]'],
-                                    last_name=request.query_params['user_info[last_name]'],
-                                    username=request.query_params['user_info[username]'],
-                                    notifications=True
-                                    )
+                User.objects.create(**user_data)
             return Response(True)
         else:
             return Response(False)
