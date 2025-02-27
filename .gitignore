@@ -49,3 +49,5 @@ media/
 # Coverage (если используешь pytest или coverage.py)
 .coverage
 htmlcov/
+
+data.json
