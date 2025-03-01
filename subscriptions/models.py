@@ -26,6 +26,8 @@ class Subscription(models.Model):
     paymentDate = models.DateField(blank=True, null=True)
     notifications = models.CharField(max_length=255, blank=True, null=True)
     category = models.CharField(max_length=255, blank=True, null=True)
+    last_notification = models.DateField(blank=True, null=True)
+
 
     def __str__(self):
         return f"{self.name} ({self.user_id})"

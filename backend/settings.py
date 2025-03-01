@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'subscriptions',
+    'mailer',
     'corsheaders',
+    'django_celery_beat',
 
 ]
 
@@ -112,6 +114,14 @@ DATABASES = {
 
     }
 }
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+#CELERY_RESULT_BACKEND = str(os.getenv('CELERY_RESULT_BACKEND'))
+
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
 
 
 # Password validation

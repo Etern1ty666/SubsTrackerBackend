@@ -90,7 +90,6 @@ class CreateSubscription(APIView):
             return Response('Authorize via telegram', status=401)
 
 
-
 class DeleteSubscription(APIView):
     def post(self, request):
         try:
@@ -101,6 +100,7 @@ class DeleteSubscription(APIView):
         except:
             return Response('Delete error')
 
+
 class UpdateSubscription(APIView):
     def post(self, request):
 
@@ -109,7 +109,6 @@ class UpdateSubscription(APIView):
         serializer = SubscriptionSerializer(subscription, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            print(serializer.data)
             return Response(serializer.data)
         else:
             return Response('Update error')
@@ -138,9 +137,6 @@ class GetSubscriptions(APIView):
             return Response(result)
         else:
             return Response('Authorize via telegram', status=401)
-
-
-
 
 
 class DeleteAllSubscriptions(APIView):
