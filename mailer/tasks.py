@@ -9,10 +9,7 @@ from dateutil.relativedelta import relativedelta
 import os
 from dotenv import load_dotenv
 load_dotenv()
-import locale
 
-
-locale.setlocale(category=locale.LC_ALL, locale="Russian")
 
 def get_next_payment_date(payment_date, period: int, period_type):
     now = datetime.now().date()
@@ -36,6 +33,7 @@ def get_next_payment_date(payment_date, period: int, period_type):
                 periods_count = months_before_now // period + 1
                 next_payment = payment_date + relativedelta(months=periods_count * period)
     return next_payment
+
 
 @shared_task
 def notifications_mailer():
