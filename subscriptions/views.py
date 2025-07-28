@@ -137,13 +137,67 @@ class AddTestSubscriptions(APIView):
             return error
 
         user_id = user_info['id']
-        test_data = [
-            {"name": "Мобильный тариф", "icon": "19", "color": "#2690ce", "cost": "399.99", "period": "30", "periodType": "day", "paymentDate": "2025-02-25", "notifications": True, "category": "internet"},
-            {"name": "Домашний интернет", "icon": "5", "color": "#4b942c", "cost": "650", "period": "1", "periodType": "month", "paymentDate": "2025-02-22", "notifications": True, "category": "internet"},
-            {"name": "Фильмы", "icon": "3", "color": "#971b57", "cost": "500", "period": "3", "periodType": "month", "paymentDate": "2025-02-14", "notifications": True, "category": "media"},
-            {"name": "Музыка", "icon": "16", "color": "#aeb116", "cost": "500", "period": "3", "periodType": "month", "paymentDate": "2025-03-14", "notifications": True, "category": "media"},
-            {"name": "Спортзал", "icon": "12", "color": "#97120d", "cost": "4500", "period": "3", "periodType": "month", "paymentDate": "2025-04-14", "notifications": True, "category": "health"},
-        ]
+        test_data = [{
+                "user_id": user_info['id'],
+                "name": "Мобильный тариф",
+                "icon": "19",
+                "color": "#2690ce",
+                "cost": "399.99",
+                "period": "30",
+                "periodType": "day",
+                "paymentDate": "2025-02-25",
+                "notifications": "1",
+                "category": "internet"
+            },
+            {
+                "user_id": user_info['id'],
+                "name": "Домашний интернет",
+                "icon": "5",
+                "color": "#4b942c",
+                "cost": "650",
+                "period": "1",
+                "periodType": "month",
+                "paymentDate": "2025-02-22",
+                "notifications": "1",
+                "category": "internet"
+            },
+            {
+                "user_id": user_info['id'],
+                "name": "Фильмы",
+                "icon": "3",
+                "color": "#971b57",
+                "cost": "500",
+                "period": "3",
+                "periodType": "month",
+                "paymentDate": "2025-02-14",
+                "notifications": "1",
+                "category": "media"
+            },
+            {
+                "user_id": user_info['id'],
+                "name": "Музыка",
+                "icon": "16",
+                "color": "#aeb116",
+                "cost": "500",
+                "period": "3",
+                "periodType": "month",
+                "paymentDate": "2025-03-14",
+                "notifications": "1",
+                "category": "media"
+            },
+            {
+                "user_id": user_info['id'],
+                "name": "Спортзал",
+                "icon": "12",
+                "color": "#97120d",
+                "cost": "4500",
+                "period": "3",
+                "periodType": "month",
+                "paymentDate": "2025-04-14",
+                "notifications": "1",
+                "category": "health"
+            },
+            ]
 
         created = []
         for item in test_data:
