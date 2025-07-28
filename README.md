@@ -13,16 +13,18 @@ GRANT ALL PRIVILEGES ON DATABASE django TO django_admin;
 
 3. download and start redis-server.exe https://github.com/tporadowski/redis/releases
 
-4. создать venv и активировать
+4. Подставить в .env tg bot token
+   
+6. создать venv и активировать
 
 pip install -r requirements.txt
 
-5. 
+6. 
 python manage.py migrate
 
 python manage.py runserver
 
-6. 
+7. 
 в другом терминале
 
 активировать тот же самый venv
