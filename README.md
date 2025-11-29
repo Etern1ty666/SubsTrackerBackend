@@ -4,6 +4,8 @@
 
 2. создать для django бд:
 
+psql -U postgres
+
 CREATE USER django_admin WITH PASSWORD '123';
 
 CREATE DATABASE django OWNER django_admin;
